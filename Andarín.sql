@@ -50,5 +50,7 @@ create table Ped_Zap (
     N_Pedido int,
     Cod_Zap char(3),
     Cantidad smallint not null,
-    primary key (N_Pedido, Cod_Zap)
+    primary key (N_Pedido, Cod_Zap),
+    constraint ped_zap_fk1 foreign key (N_Pedido) references Pedidos(N_Pedido),
+    constraint ped_zap_fk2 foreign key (Cod_Zap) references Zapatos(Cod_Zap)
 )
