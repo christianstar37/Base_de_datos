@@ -2,10 +2,12 @@
 create database Andarín;
 use Andarín;
 create table Clientes (
-    DNI_Cli char(9) primary key,
-    Tlf_Cli char(9) not null,
+    DNI_Cli varchar(9) primary key,
+    Tlf_Cli varchar(9) not null,
     Descuento tinyint,
-    Nombre_Cli varchar(50) not null
+    Nombre_Cli varchar(50) not null,
+    constraint dni_cli_ck check (length(DNI_Cli) = 9),
+    constraint tlf_cli_ck check (length(Tlf_Cli) = 9)
 );
 
 create table Fábrica (
